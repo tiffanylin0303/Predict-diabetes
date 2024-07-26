@@ -37,8 +37,7 @@ param_grid = {
 }
 
 
-grid_search = GridSearchCV(estimator=KNeighborsClassifier(),
-                           param_grid=param_grid, cv=5, scoring='accuracy', error_score='raise')
+grid_search = GridSearchCV(estimator=KNeighborsClassifier(), param_grid=param_grid, cv=5, scoring='accuracy', error_score='raise')
 grid_search.fit(x_train, y_train)
 
 print("Best parameters: ", grid_search.best_params_)

@@ -33,8 +33,7 @@ param_grid = {
     'kernel' : ["poly"]
 }
 
-grid_search = GridSearchCV(estimator=SVC(random_state=11),
-                           param_grid=param_grid, cv=5, scoring='accuracy')
+grid_search = GridSearchCV(estimator=SVC(random_state=11), param_grid=param_grid, cv=5, scoring='accuracy')
 grid_search.fit(x_train, y_train)
 
 print("Best parameters: ", grid_search.best_params_)

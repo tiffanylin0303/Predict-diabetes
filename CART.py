@@ -57,8 +57,7 @@ param_grid = {
     'min_samples_leaf': list(range(1, 21))
 }
 
-grid_search = GridSearchCV(estimator=DecisionTreeClassifier(random_state=4),
-                           param_grid=param_grid, cv=5, scoring='accuracy', error_score='raise')
+grid_search = GridSearchCV(estimator=DecisionTreeClassifier(random_state=4), param_grid=param_grid, cv=5, scoring='accuracy', error_score='raise')
 grid_search.fit(x_train, y_train)
 
 print("Best parameters: ", grid_search.best_params_)
